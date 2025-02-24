@@ -34,13 +34,13 @@ router.get(
         }
 
         // Redirect to frontend home page after login
-        res.redirect("http://localhost:5173/home");
+        res.redirect(`${process.env.FRONTEND_URL}/home`);
       } catch (error) {
         
-        res.redirect("http://localhost:5173/");
+        res.redirect(`${process.env.FRONTEND_URL}/`);
       }
     } else {
-      res.redirect("http://localhost:5173/");
+      res.redirect(`${process.env.FRONTEND_URL}/`);
     }
   }
 );

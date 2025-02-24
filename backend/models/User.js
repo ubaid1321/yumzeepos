@@ -18,9 +18,9 @@ const createUser = async (googleId, name, email, photo) => {
       "INSERT INTO users (google_id, name, email, photo, created_at) VALUES (?, ?, ?, ?, NOW())",
       [googleId, name, email, photo]
     );
-    console.log("✅ User successfully inserted into DB.");
+    
   } catch (error) {
-    console.error("❌ Error inserting user:", error);
+    
   }
 };
 
