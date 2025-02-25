@@ -1,7 +1,7 @@
 const express = require("express");
 const passport = require("passport");
-const sendWelcomeEmail = require("../utils/mailer"); // Import mailer function
-const User = require("../models/User"); // Import user model (MongoDB, MySQL, etc.)
+const sendWelcomeEmail = require("../utils/mailer");
+const User = require("../models/User"); 
 const router = express.Router();
 require("dotenv").config();
 
@@ -36,13 +36,14 @@ router.get(
         // Redirect to frontend home page after login
         res.redirect(`${process.env.FRONTEND_URL}/home`);
       } catch (error) {
-        
         res.redirect(`${process.env.FRONTEND_URL}/`);
       }
-    } else {
-      res.redirect(`${process.env.FRONTEND_URL}/`);
+      } else {
+        res.redirect(`${process.env.FRONTEND_URL}/`);
+      }
+      
     }
-  }
+  
 );
 
 // 🔹 Get User Session (Check if user is logged in)

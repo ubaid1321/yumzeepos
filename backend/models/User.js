@@ -6,7 +6,7 @@ const getUserByGoogleId = async (googleId) => {
     const [rows] = await db.execute("SELECT * FROM users WHERE google_id = ?", [googleId]);
     return rows.length > 0 ? rows[0] : null;
   } catch (error) {
-    console.error("❌ Error fetching user:", error);
+    console.error(" Error fetching user:", error);
     return null;
   }
 };
